@@ -18,7 +18,11 @@ dct = {'a': 3, 'b': 7, 'c': -2, 'd': 10, 'e': 5}
 
 print("Exercise 4.1")
 
-pass
+total = 0
+for value in dct.values():  
+    total += value
+
+print(total)
 
 print("---")
 
@@ -32,7 +36,7 @@ Print the key that has the largest value in dct.
 
 print("Exercise 4.2")
 
-pass
+print(max(dct, key=dct.get))
 
 print("---")
 
@@ -46,7 +50,8 @@ Create a new dictionary with the squares of all the values in dct.
 
 print("Exercise 4.3")
 
-pass
+squares = {k: v**2 for k, v in dct.items()}
+print(squares)
 
 print("---")
 
@@ -60,7 +65,9 @@ Print only the keys in dct whose values are even numbers.
 
 print("Exercise 4.4")
 
-pass
+
+evens = [k for k, v in dct.items() if v % 2 == 0]
+print(evens)
 
 print("---")
 
@@ -74,7 +81,8 @@ Create a new dictionary that swaps the keys and values in dct.
 
 print("Exercise 4.5")
 
-pass
+swapped = {v: k for k, v in dct.items()}
+print(swapped)
 
 print("---")
 
@@ -91,7 +99,15 @@ s = 'ccctcctttttcc'
 
 print("Exercise 4.6")
 
-pass
+counts = {}                   
+for ch in s:                  
+    if ch in counts:          
+        counts[ch] += 1
+    else:                    
+        counts[ch] = 1
+
+print(counts)
+
 
 print("---")
 
@@ -110,7 +126,11 @@ responses = 'jjjpjjpppppjj'
 
 print("Exercise 4.7")
 
-pass
+words = []
+for r in responses:                 
+    words.append(responses_mapping[r])  
+
+print(words)
 
 print("---")
 
@@ -125,7 +145,14 @@ Merge the following two dictionaries into one:
 
 print("Exercise 4.8")
 
-pass
+d1 = {'a': 1, 'b': 2}
+d2 = {'c': 3, 'd': 4}
+
+merged = d1.copy()   
+merged.update(d2)    
+
+print(merged)
+
 
 print("---")
 
@@ -140,7 +167,12 @@ create a new one whose keys are sorted alphabetically.
 
 print("Exercise 4.9")
 
-pass
+animals = {'zebra': 10, 'dolphin': 25, 'alligator': 3, 'monkey': 5, 'pig': 9}
+
+sorted_animals = {k: animals[k] for k in sorted(animals)}
+
+print(sorted_animals)
+
 
 print("---")
 
@@ -155,6 +187,10 @@ create a new one whose values appear in increasing order.
 
 print("Exercise 4.10")
 
-pass
+animals = {'zebra': 10, 'dolphin': 25, 'alligator': 3, 'monkey': 5, 'pig': 9}
+
+sorted_by_value = {k: v for k, v in sorted(animals.items(), key=lambda item: item[1])}
+
+print(sorted_by_value)
 
 print("---")
