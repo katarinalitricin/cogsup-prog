@@ -14,6 +14,7 @@ control.start(subject_id=1)
 
 square.present(clear=True, update=False)
 
+
 fixation.present(clear=False, update=True)
 
 exp.clock.wait(500)
