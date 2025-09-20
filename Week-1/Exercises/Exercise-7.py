@@ -32,7 +32,7 @@ def guess_my_number():
             high_bound = guess - 1
             guess = (low_bound + high_bound) // 2
             # If the user says I got it right, I can stop
-            print(f"Got it, I’ll try a lower number: {guess}")
+            print(f"Got it, I’ll try a lower number: {guess}")C
         elif feedback in ('c', 'correct'):
             print(f"Nice! I figured it out — your number is {guess}.")
             break
