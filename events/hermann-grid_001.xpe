@@ -1,0 +1,50 @@
+#Expyriment 1.0.0 (Python 3.11.8), .xpe-file, coding: UTF-8
+#date: Sun Sep 28 2025 10:35:32
+#sha1: 1d25ae
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Darwin', node='Katarinas-Laptop.local', release='23.6.0', version='Darwin Kernel Version 23.6.0: Mon Jul 29 21:16:46 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T8112', machine='arm64')
+Time,Type,Event,Value,Detail,Detail2
+1255,design,log,
+#design: #exp: Hermann Grid
+#design: block_cnt,block_id,trial_cnt,trial_id
+1256,design,logged,
+1256,Experiment,started
+1256,Stimulus,presented,0
+1256,Stimulus,presented,1
+1257,Stimulus,presented,2
+1257,Stimulus,presented,3
+1257,Stimulus,presented,4
+1258,Stimulus,presented,5
+1258,Stimulus,presented,6
+1258,Stimulus,presented,7
+1258,Stimulus,presented,8
+1259,Stimulus,presented,9
+1259,Stimulus,presented,10
+1259,Stimulus,presented,11
+1259,Stimulus,presented,12
+1259,Stimulus,presented,13
+1260,Stimulus,presented,14
+1260,Stimulus,presented,15
+1260,Stimulus,presented,16
+1260,Stimulus,presented,17
+1261,Stimulus,presented,18
+1261,Stimulus,presented,19
+1261,Stimulus,presented,20
+1261,Stimulus,presented,21
+1261,Stimulus,presented,22
+1262,Stimulus,presented,23
+1262,Stimulus,presented,24
+1262,Stimulus,presented,25
+1262,Stimulus,presented,26
+1263,Stimulus,presented,27
+1263,Stimulus,presented,28
+1263,Stimulus,presented,29
+1263,Stimulus,presented,30
+1263,Stimulus,presented,31
+1264,Stimulus,presented,32
+1264,Stimulus,presented,33
+1264,Stimulus,presented,34
+1264,Stimulus,presented,35
+1691,Keyboard,received,13,wait
+1691,Experiment,ended
