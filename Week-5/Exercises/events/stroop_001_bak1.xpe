@@ -1,0 +1,70 @@
+#Expyriment 1.0.0 (Python 3.11.8), .xpe-file, coding: UTF-8
+#date: Sun Oct 12 2025 15:01:27
+#sha1: 4f080d
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Darwin', node='Katarinas-Laptop.local', release='23.6.0', version='Darwin Kernel Version 23.6.0: Mon Jul 29 21:16:46 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T8112', machine='arm64')
+Time,Type,Event,Value,Detail,Detail2
+1178,design,log,
+#design: #exp: Stroop
+#design: #dvn: trial_block,trial_number,trial_type,word_meaning,text_color,response_time,accuracy
+#design: block_cnt,block_id,trial_cnt,trial_id
+1178,design,logged,
+1178,Experiment,started
+1190,Stimulus,presented,1
+13570,Keyboard,received,32,wait
+13576,Stimulus,presented,0
+14090,Stimulus,presented,2
+20349,Keyboard,received,13,wait
+20357,Stimulus,presented,0
+20874,Stimulus,presented,3
+23892,Keyboard,received,102,wait
+23907,Stimulus,presented,0
+24423,Stimulus,presented,4
+26776,Keyboard,received,13,wait
+26790,Stimulus,presented,0
+27307,Stimulus,presented,5
+28094,Keyboard,received,102,wait
+28107,Stimulus,presented,0
+28623,Stimulus,presented,6
+31411,Keyboard,received,102,wait
+31424,Stimulus,presented,0
+31940,Stimulus,presented,7
+32688,Keyboard,received,102,wait
+32690,Stimulus,presented,0
+33207,Stimulus,presented,8
+33957,Keyboard,received,13,wait
+33973,Stimulus,presented,0
+34490,Stimulus,presented,9
+35289,Keyboard,received,13,wait
+35307,Stimulus,presented,0
+35823,Stimulus,presented,10
+42561,Keyboard,received,13,wait
+42574,Stimulus,presented,0
+43090,Stimulus,presented,11
+44822,Keyboard,received,13,wait
+44825,Stimulus,presented,0
+45340,Stimulus,presented,12
+46071,Keyboard,received,13,wait
+46073,Stimulus,presented,0
+46590,Stimulus,presented,13
+47152,Keyboard,received,13,wait
+47157,Stimulus,presented,0
+47674,Stimulus,presented,14
+48453,Keyboard,received,102,wait
+48457,Stimulus,presented,0
+48974,Stimulus,presented,15
+49944,Keyboard,received,13,wait
+49957,Stimulus,presented,0
+50474,Stimulus,presented,16
+51947,Keyboard,received,102,wait
+51957,Stimulus,presented,0
+52474,Stimulus,presented,17
+59043,Keyboard,received,13,wait
+59058,Stimulus,presented,0
+59574,Stimulus,presented,18
+60516,Experiment,paused
+60524,Stimulus,presented,19
+62325,Keyboard,received,y,wait_char
+62325,Experiment,ended
+62325,Data,saved
