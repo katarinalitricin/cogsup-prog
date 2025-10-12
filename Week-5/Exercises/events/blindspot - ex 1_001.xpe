@@ -1,0 +1,18 @@
+#Expyriment 1.0.0 (Python 3.11.8), .xpe-file, coding: UTF-8
+#date: Sun Oct 12 2025 14:33:44
+#sha1: 01c654
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Darwin', node='Katarinas-Laptop.local', release='23.6.0', version='Darwin Kernel Version 23.6.0: Mon Jul 29 21:16:46 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T8112', machine='arm64')
+Time,Type,Event,Value,Detail,Detail2
+1214,design,log,
+#design: #exp: Blindspot
+#design: block_cnt,block_id,trial_cnt,trial_id
+1214,design,logged,
+1214,Experiment,started
+1225,Stimulus,presented,0
+2131,Keyboard,received,32,wait
+2137,Stimulus,presented,1
+2142,Stimulus,presented,2
+2482,Keyboard,received,32,wait
+2482,Experiment,ended
