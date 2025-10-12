@@ -1,0 +1,47 @@
+#Expyriment 1.0.0 (Python 3.11.8), .xpe-file, coding: UTF-8
+#date: Sun Oct 12 2025 14:51:17
+#sha1: 844946
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Darwin', node='Katarinas-Laptop.local', release='23.6.0', version='Darwin Kernel Version 23.6.0: Mon Jul 29 21:16:46 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T8112', machine='arm64')
+Time,Type,Event,Value,Detail,Detail2
+1646,design,log,
+#design: #exp: Blindspot
+#design: #dvn: eye,key,current-radius,x_coordinate,y_coordinate
+#design: block_cnt,block_id,trial_cnt,trial_id
+1646,design,logged,
+1646,Experiment,started
+1666,Stimulus,presented,0
+2208,Keyboard,received,32,wait
+2212,Stimulus,presented,1
+2216,Stimulus,presented,2
+3355,Keyboard,received,49,wait
+3355,Stimulus,presented,1
+3366,Stimulus,presented,3
+3763,Keyboard,received,49,wait
+3764,Stimulus,presented,1
+3766,Stimulus,presented,4
+4131,Keyboard,received,50,wait
+4131,Stimulus,presented,1
+4149,Stimulus,presented,5
+5381,Keyboard,received,50,wait
+5381,Stimulus,presented,1
+5400,Stimulus,presented,6
+5717,Keyboard,received,50,wait
+5717,Stimulus,presented,1
+5733,Stimulus,presented,7
+5953,Keyboard,received,50,wait
+5953,Stimulus,presented,1
+5966,Stimulus,presented,8
+6142,Keyboard,received,50,wait
+6142,Stimulus,presented,1
+6149,Stimulus,presented,9
+6326,Keyboard,received,50,wait
+6326,Stimulus,presented,1
+6333,Stimulus,presented,10
+6489,Keyboard,received,50,wait
+6489,Stimulus,presented,1
+6499,Stimulus,presented,11
+12461,Keyboard,received,32,wait
+12461,Experiment,ended
+12462,Data,saved

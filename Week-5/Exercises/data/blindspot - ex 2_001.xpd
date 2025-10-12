@@ -1,0 +1,11 @@
+#Expyriment 1.0.0 (Python 3.11.8), .xpd-file, coding: UTF-8
+#date: Sun Oct 12 2025 14:51:32
+#--EXPERIMENT INFO
+#e mainfile: blindspot - ex 2.py
+#e sha1: 844946
+#e modules: 
+#e Experiment: Blindspot
+#e no between subject factors
+#--SUBJECT INFO
+#s id: 1
+subject_id,eye,key,current-radius,x_coordinate,y_coordinate

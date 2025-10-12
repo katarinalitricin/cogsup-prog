@@ -7,7 +7,7 @@ from expyriment.misc.constants import K_DOWN, K_UP, K_LEFT, K_RIGHT, K_SPACE, K_
 exp = design.Experiment(name="Blindspot", background_colour=C_WHITE, foreground_colour=C_BLACK)
 control.set_develop_mode()
 control.initialize(exp)
-exp.data_variable_names = ['side','final radius','final x coordinate','final y coordinate']
+exp.data_variable_names = ['eye','key','current-radius','x_coordinate','y_coordinate']
 
 """ Stimuli """
 def draw(circle, fixation):
@@ -41,10 +41,11 @@ def move_c(c1,key,fixation):
 ds = 15
 dp = 20
 keys = [K_DOWN, K_UP, K_LEFT, K_RIGHT,K_SPACE, K_1, K_2]
+k_d = {K_DOWN:'down', K_UP:'up', K_LEFT:'left', K_RIGHT:'right',K_SPACE:'space', K_1:'1', K_2:'2'}
 
 def instructions(side='R'):
     s = 'right' if side=='R' else 'left'
-    ins = stimuli.TextScreen('Instructions', f' Cover your {s} eye and focus on the cross. Use the 1 key to shrink the circle and the 2 key to enlarge it. Move the circle with the arrow keys. When the circle disappears from view, press SPACE. Press SPACE to begin the experiment.')
+    ins = stimuli.TextScreen('Instructions', f'Cover your {s} eye and focus on the cross. Use the 1 key to shrink the circle and the 2 key to enlarge it. Move the circle with the arrow keys. When the circle disappears from view, press SPACE. Press SPACE to begin the experiment.')
     ins.present()
 
 """ Experiment """
@@ -63,16 +64,17 @@ def run_trial(side='R'):
         key, _ = exp.keyboard.wait(keys)
         if key == K_1:
             circle = change_circle_size(circle, -ds, fixation)
+            exp.data.add([side,k_d[key],circle.radius,circle.position[0],circle.position[1]])
             continue
         elif key == K_2:
             circle = change_circle_size(circle, ds, fixation)
+            exp.data.add([side,k_d[key],circle.radius,circle.position[0],circle.position[1]])
             continue
         elif key in [K_DOWN, K_UP, K_LEFT, K_RIGHT]:
             move_c(circle,key,fixation)
+            exp.data.add([side,k_d[key],circle.radius,circle.position[0],circle.position[1]])
         elif key == K_SPACE:
             break
-
-    exp.data.add([side,circle.radius,circle.position[0],circle.position[1]])
 
 
 control.start(subject_id=1)

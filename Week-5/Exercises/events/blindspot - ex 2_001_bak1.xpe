@@ -1,0 +1,27 @@
+#Expyriment 1.0.0 (Python 3.11.8), .xpe-file, coding: UTF-8
+#date: Sun Oct 12 2025 14:49:44
+#sha1: 55d2d4
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Darwin', node='Katarinas-Laptop.local', release='23.6.0', version='Darwin Kernel Version 23.6.0: Mon Jul 29 21:16:46 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T8112', machine='arm64')
+Time,Type,Event,Value,Detail,Detail2
+1412,design,log,
+#design: #exp: Blindspot
+#design: #dvn: side,final radius,final x coordinate,final y coordinate
+#design: block_cnt,block_id,trial_cnt,trial_id
+1412,design,logged,
+1412,Experiment,started
+1421,Stimulus,presented,0
+2683,Keyboard,received,32,wait
+2690,Stimulus,presented,1
+2705,Stimulus,presented,2
+4832,Keyboard,received,49,wait
+4832,Stimulus,presented,1
+4837,Stimulus,presented,3
+4838,stderr,received,'Traceback (most recent call last):'
+4838,stderr,received,'  File "/Users/katarinalitricin/Documents/CogSup/Programming/Assignments/Week-5/Exercises/blindspot - ex 2.py", line 84, in <module>'
+4839,stderr,received,'    run_trial()'
+4839,stderr,received,'  File "/Users/katarinalitricin/Documents/CogSup/Programming/Assignments/Week-5/Exercises/blindspot - ex 2.py", line 66, in run_trial'
+4839,stderr,received,'    exp.data.add([side,k_d[key],circle.radius,circle.position[0],circle.position[1]])'
+4839,stderr,received,'                       ^^^'
+4839,stderr,received,"NameError: name 'k_d' is not defined. Did you mean: 'K_1'?"
