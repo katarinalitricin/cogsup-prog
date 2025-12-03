@@ -1,76 +1,73 @@
-
 from expyriment import design, control, stimuli
 from expyriment.misc.constants import K_SPACE
 
-def load(stims):
-    for s in stims:
-        s.preload()
 
-def present_for(stims, canvas, n_frames=9):
-    canvas.clear_surface()
-    for s in stims:
-        s.plot(canvas)
-    canvas.present()
-    exp.clock.wait(int(n_frames * (1000/60.0)))  # frames -> ms
+from utils import *
+ 
 
-def make_circles(radius=50, preload=True):
+colors = {
+    1:"yellow",
+    2:"red",
+    3:"green",
+    4:"yellow"
+}
 
-    step = 2 * radius
-    slots = [-3*step/2, -step/2, step/2, 3*step/2]  # four logical positions
-
-    c1 = stimuli.Circle(radius=radius, position=(int(slots[0]), 0), colour=(0, 0, 0))
-    c2 = stimuli.Circle(radius=radius, position=(int(slots[1]), 0), colour=(0, 0, 0))
-    c3 = stimuli.Circle(radius=radius, position=(int(slots[2]), 0), colour=(0, 0, 0))
-    c4 = stimuli.Circle(radius=radius, position=(int(slots[3]), 0), colour=(0, 0, 0))
-
-    A = [c1, c2, c3]
-    B = [c2, c3, c4]
-
-    if preload:
-        load([c1, c2, c3, c4])
-
-    return A, B
-
-def add_tags(frameA, frameB, tag_radius):
-    colours = [(255, 215, 0), (255, 0, 0), (0, 120, 255)]
+def make_circles(circles: list[int], radius:int, color_tags:bool) -> None:
+    """There are 4 circles: return the ones specified in the circles list with a certain radius as stimulus"""
 
 
-    for idx, big in enumerate(frameA):
-        tag = stimuli.Circle(radius=tag_radius, colour=colours[idx], position=(0, 0))
-        tag.plot(big)
-        big.preload()
+    step = radius * 3 #distance of 3 radius between circles
+    circles_stims = []
 
-    for idx, big in enumerate(frameB):
-        tag = stimuli.Circle(radius=tag_radius, colour=colours[idx], position=(0, 0))
-        tag.plot(big)
-        big.preload()
+    for i in circles: 
+        pos = ((i - 2.5) * step, 0)
+        c = stimuli.Circle(radius = radius, position=(pos), anti_aliasing=10)
+        circles_stims.append(c)
 
-    return frameA, frameB
+        if color_tags: 
+            ct = stimuli.Circle(radius=radius/3, position=(0, 0), colour=colors[i], anti_aliasing=10)
+            ct.plot(c)
+    
+    return circles_stims
 
-def run_trial(radius=50, isi_frames=3, color_tag=False):
-    A, B = make_circles(radius, preload=not color_tag)
-    if color_tag:
-        A, B = add_tags(A, B, tag_radius=max(4, radius//5))
 
-    while True:
-        present_for(A, canvas, n_frames=9)  # ~150 ms
-        if exp.keyboard.check(K_SPACE): return
-        if isi_frames > 0: exp.clock.wait(int(isi_frames * (1000/60.0)))
 
-        present_for(B, canvas, n_frames=9)
-        if exp.keyboard.check(K_SPACE): return
-        if isi_frames > 0: exp.clock.wait(int(isi_frames * (1000/60.0)))
+def run_trial(radius:int, color_tags:bool, ISI:int, t:int): 
+    
 
-exp = design.Experiment(name="Ternus Illusion")
+    c1 = make_circles([1,2,3], radius, color_tags)
+    c2 = make_circles([2,3,4], radius, color_tags)
+
+    load(c1)
+    load(c2)
+
+    while True:    
+        if exp.keyboard.check(K_SPACE):
+            break
+
+        for c in [c1, c2]:
+            present_for(exp, c, t)
+            exp.screen.clear()
+            exp.screen.update()
+            exp.clock.wait(ISI)
+
+
+
+
+
+
+
+exp = design.Experiment(name="Ternus")
+
 control.set_develop_mode()
 control.initialize(exp)
 
-canvas = stimuli.Canvas(exp.screen.size, colour=(255, 255, 255))
+
+control.start()
 
 
-run_trial(radius=50, isi_frames=2, color_tag=False)
-run_trial(radius=50, isi_frames=18, color_tag=False)
-run_trial(radius=50, isi_frames=18, color_tag=True)
+run_trial(radius=30, color_tags=False, ISI=50, t=200/16)
+run_trial(radius=30, color_tags=False, ISI=200, t=200/16)
+run_trial(radius=30, color_tags=True, ISI=200, t=200/16)
 
 control.end()
-

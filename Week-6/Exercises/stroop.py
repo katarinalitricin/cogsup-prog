@@ -10,7 +10,7 @@ TRIAL_TYPES = ["match", "mismatch"]
 N_BLOCKS = 2
 N_TRIALS_IN_BLOCK = 16
 
-# Helper for obtaining derangements in python  
+
 def derangements(lst): 
     ders = [] 
     for perm in itertools.permutations(lst): 
@@ -23,7 +23,7 @@ COLORS = ["red", "blue", "green", "orange"]
 PERMS = derangements(COLORS) # The 9 derangements 
 
 print(PERMS)
-# A list of dictionaries for the trials 
+
 trials = ( 
   [{"trial_type": "match", "word": c, "color": c} for c in COLORS] + 
   [{"trial_type": "mismatch", "word": w, "color": c} for w,c in zip(COLORS, PERMS[0])] 
@@ -106,7 +106,7 @@ for block_id in range(1, N_BLOCKS + 1):
             color = random.choice(colors_wrong)
 
         run_trial(block_id, trial_id, trial_type, word, color)
-    if block_id != N_BLOCKS:
+    if block_i!= N_BLOCKS:
         present_instructions(INSTR_MID)
 present_instructions(INSTR_END)
 
